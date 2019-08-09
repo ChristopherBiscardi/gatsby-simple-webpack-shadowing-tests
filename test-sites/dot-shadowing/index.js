@@ -1,2 +1,2 @@
-const someComponentFile = require("@components/Some.Component.js");
-const someFile = require("theme-a/src/Some.js");
+const someComponentFile = require("@components/Some.Component");
+const someFile = require("theme-a/src/Some");

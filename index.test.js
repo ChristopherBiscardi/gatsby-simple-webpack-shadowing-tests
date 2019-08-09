@@ -8,7 +8,14 @@ test.each([
     {
       mode: "development",
       entry: "./index.js",
-      resolve: { plugins: [new ShadowRealm({ themes: [] })] }
+      resolve: {
+        plugins: [
+          new ShadowRealm({
+            extensions: [".wasm", ".mjs", ".js", ".json"],
+            themes: []
+          })
+        ]
+      }
     },
     { context: path.resolve(__dirname, "test-sites/non-usage") },
     "./index.js"
@@ -21,6 +28,7 @@ test.each([
       resolve: {
         plugins: [
           new ShadowRealm({
+            extensions: [".wasm", ".mjs", ".js", ".json"],
             themes: [
               {
                 themeName: "theme-a",
@@ -42,9 +50,11 @@ test.each([
     {
       mode: "development",
       entry: "./index.js",
+
       resolve: {
         plugins: [
           new ShadowRealm({
+            extensions: [".wasm", ".mjs", ".js", ".json"],
             themes: [
               {
                 themeName: "theme-a",
@@ -76,6 +86,7 @@ test.each([
         extensions: [".ts", ".tsx", ".js"],
         plugins: [
           new ShadowRealm({
+            extensions: [".ts", ".tsx", ".js"],
             themes: [
               {
                 themeName: "theme-a",
@@ -117,6 +128,7 @@ test.each([
         },
         plugins: [
           new ShadowRealm({
+            extensions: [".js", ".tsx"],
             themes: [
               {
                 themeName: "theme-a",
